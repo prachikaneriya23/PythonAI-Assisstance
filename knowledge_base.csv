@@ -1,0 +1,295 @@
+id,keywords,category,title,explanation,code_example
+1,variable variables assignment naming,Basics,Variables,"A variable is a name bound to a value in memory. Python is dynamically typed, so you don't declare a type - it is inferred from the value you assign. Names must start with a letter or underscore and are case-sensitive.","age = 21
+name = ""Agrim""
+is_student = True
+print(age, name, is_student)"
+2,data types int float str bool list tuple dict set,Basics,Built-in Data Types,"Core built-in types: int, float, complex, str, bool, list, tuple, dict, set, frozenset, bytes, and NoneType. Use type(x) to check a value's type.","x = 10          # int
+y = 3.14        # float
+name = ""hi""     # str
+flag = True     # bool
+items = [1,2,3] # list
+point = (1,2)   # tuple
+person = {""a"":1} # dict
+uniq = {1,2,3}  # set
+print(type(x), type(name))"
+3,operators arithmetic comparison logical bitwise,Basics,Operators,"Arithmetic: + - * / // % **. Comparison: == != > < >= <=. Logical: and or not. Bitwise: & | ^ ~ << >>. // is floor division, ** is exponent.","print(7 // 2)   # 3
+print(7 % 2)    # 1
+print(2 ** 5)   # 32
+print((5 > 3) and (2 < 4))"
+4,if else elif conditional condition,Basics,Conditionals (if/elif/else),Conditionals run code based on a boolean expression. Python uses indentation (not braces) to define blocks - be consistent with spaces.,"score = 82
+if score >= 90:
+    grade = ""A""
+elif score >= 75:
+    grade = ""B""
+else:
+    grade = ""C""
+print(grade)"
+5,loop for while range break continue,Basics,Loops (for / while),"`for` iterates over an iterable (list, range, string...). `while` repeats while a condition is true. `break` exits a loop, `continue` skips to the next iteration.","for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+
+n = 0
+while n < 3:
+    print(""n ="", n)
+    n += 1"
+6,function def parameters arguments return default args kwargs,Basics,Functions,"Define reusable code with `def`. Parameters can have default values, and you can accept variable args (*args) and keyword args (**kwargs).","def greet(name, greeting=""Hello""):
+    return f""{greeting}, {name}!""
+
+def total(*args, **kwargs):
+    return sum(args) + sum(kwargs.values())
+
+print(greet(""Agrim""))
+print(total(1, 2, 3, bonus=10))"
+7,lambda anonymous function,Basics,Lambda Functions,"A lambda is a small anonymous function: `lambda args: expression`. Useful for short throwaway functions, e.g. as a `key=` for sorted().","square = lambda x: x * x
+print(square(5))
+
+names = [""Bob"", ""al"", ""Charlie""]
+print(sorted(names, key=lambda s: len(s)))"
+8,list comprehension dict comprehension set comprehension,Basics,Comprehensions,"Comprehensions build lists/dicts/sets in one concise line, often faster and more readable than an equivalent for-loop with append().","squares = [x*x for x in range(10) if x % 2 == 0]
+sq_map = {x: x*x for x in range(5)}
+uniq = {x % 3 for x in range(10)}
+print(squares, sq_map, uniq)"
+9,string str methods slicing format f-string,Basics,Strings,"Strings are immutable sequences of characters. Slicing: s[start:stop:step]. Common methods: split, join, strip, replace, upper/lower, find. f-strings embed expressions: f'{value}'.","s = ""  Hello, World!  ""
+print(s.strip().lower())
+print(s[2:7])
+parts = ""a,b,c"".split("","")
+print(""-"".join(parts))
+name = ""Agrim""
+print(f""Hi {name}, len={len(name)}"")"
+10,list methods append pop insert remove sort slicing,Basics,Lists,"Lists are ordered, mutable sequences. Key methods: append, extend, insert, pop, remove, sort, reverse. Slicing works the same as strings.","nums = [3, 1, 4, 1, 5]
+nums.append(9)
+nums.sort()
+print(nums)
+print(nums[1:4])
+nums.remove(1)
+print(nums)"
+11,dictionary dict keys values items get update,Basics,Dictionaries,"Dicts store key-value pairs (insertion-ordered since 3.7). Use .get(key, default) to avoid KeyError, .items()/.keys()/.values() to iterate.","person = {""name"": ""Agrim"", ""age"": 21}
+person[""city""] = ""Lucknow""
+print(person.get(""country"", ""India""))
+for k, v in person.items():
+    print(k, ""->"", v)"
+12,tuple immutable unpacking,Basics,Tuples,Tuples are ordered and immutable. Great for fixed collections and for unpacking multiple return values.,"point = (3, 4)
+x, y = point
+print(x, y)
+
+def minmax(nums):
+    return min(nums), max(nums)
+
+lo, hi = minmax([4,1,9,2])
+print(lo, hi)"
+13,set union intersection difference,Basics,Sets,"Sets are unordered collections of unique items. Support union (|), intersection (&), difference (-), and symmetric_difference (^).","a = {1,2,3}
+b = {2,3,4}
+print(a | b)
+print(a & b)
+print(a - b)"
+14,exception try except finally error handling raise,Exceptions,Exception Handling,"Wrap risky code in try/except. Use `finally` for cleanup that always runs, and `raise` to signal your own errors. Catch specific exceptions rather than a bare `except:`.","try:
+    x = int(""abc"")
+except ValueError as e:
+    print(""Bad input:"", e)
+finally:
+    print(""Done trying"")
+
+def check(age):
+    if age < 0:
+        raise ValueError(""Age cannot be negative"")
+    return age"
+15,custom exception class exception subclass,Exceptions,Custom Exceptions,Create your own exception types by subclassing Exception. This makes error handling more precise in larger programs.,"class InsufficientFundsError(Exception):
+    pass
+
+def withdraw(balance, amount):
+    if amount > balance:
+        raise InsufficientFundsError(""Not enough balance"")
+    return balance - amount
+
+try:
+    withdraw(100, 200)
+except InsufficientFundsError as e:
+    print(e)"
+16,class object oop init self,OOP,Classes & Objects,"A class is a blueprint for objects. `__init__` is the constructor, `self` refers to the current instance.","class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        return f""{self.name} says Woof!""
+
+d = Dog(""Rex"")
+print(d.bark())"
+17,inheritance super parent child class extend,OOP,Inheritance,A subclass inherits attributes/methods from a parent class. Use super() to call the parent's implementation.,"class Animal:
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        return ""...""
+
+class Cat(Animal):
+    def speak(self):
+        return f""{self.name} says Meow""
+
+print(Cat(""Tom"").speak())"
+18,polymorphism method overriding duck typing,OOP,Polymorphism,Different classes can implement the same method name differently. Code that calls the method doesn't need to know the exact class.,"class Shape:
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, s): self.s = s
+    def area(self): return self.s ** 2
+
+class Circle(Shape):
+    def __init__(self, r): self.r = r
+    def area(self): return 3.14 * self.r ** 2
+
+for shape in [Square(4), Circle(3)]:
+    print(shape.area())"
+19,encapsulation private protected underscore property,OOP,Encapsulation,Python uses naming conventions for access control: `_protected` (by convention) and `__private` (name-mangled). `@property` exposes controlled getters/setters.,"class Account:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    @property
+    def balance(self):
+        return self.__balance
+
+    @balance.setter
+    def balance(self, value):
+        if value < 0:
+            raise ValueError(""negative balance"")
+        self.__balance = value
+
+a = Account(100)
+print(a.balance)"
+20,decorator function wrapper functools wraps,OOP,Decorators,A decorator wraps a function to add behaviour without modifying its code. Use functools.wraps to preserve the original function's metadata.,"import functools
+
+def log_call(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f""Calling {func.__name__}"")
+        return func(*args, **kwargs)
+    return wrapper
+
+@log_call
+def add(a, b):
+    return a + b
+
+print(add(2, 3))"
+21,generator yield iterator iter next,OOP,Generators & Iterators,"Generators produce values lazily with `yield`, saving memory versus building a full list. Any object with __iter__/__next__ is an iterator.","def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for num in countdown(3):
+    print(num)
+
+gen = (x*x for x in range(5))
+print(list(gen))"
+22,magic methods dunder str repr eq len,OOP,Magic / Dunder Methods,"Special methods like __str__, __repr__, __eq__, __len__ let your objects work with built-in functions and operators.","class Point:
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+    def __repr__(self):
+        return f""Point({self.x}, {self.y})""
+    def __eq__(self, other):
+        return (self.x, self.y) == (other.x, other.y)
+
+print(Point(1,2) == Point(1,2))"
+23,file open read write with context manager,Files,File Handling,"Use `with open(path, mode) as f:` so the file is closed automatically. Modes: 'r' read, 'w' write (overwrite), 'a' append, 'rb'/'wb' binary.","with open(""notes.txt"", ""w"") as f:
+    f.write(""Hello file!\n"")
+
+with open(""notes.txt"", ""r"") as f:
+    content = f.read()
+print(content)"
+24,module import package pip install venv virtual environment,Modules,"Modules, Packages & pip",A module is a .py file; a package is a folder of modules with __init__.py. `pip install <name>` installs third-party packages. Use a virtual environment per project: `python -m venv venv` then activate it.,"# terminal commands
+python -m venv venv
+venv\Scripts\activate      # Windows
+source venv/bin/activate    # macOS/Linux
+pip install requests
+pip freeze > requirements.txt"
+25,regex re module pattern match search findall sub,Regex,Regex Basics (re module),"The `re` module does pattern matching. re.match checks the start of a string, re.search finds anywhere, re.findall returns all matches, re.sub replaces matches.","import re
+
+text = ""Call me at 987-654-3210 or 123-456-7890""
+pattern = r""\d{3}-\d{3}-\d{4}""
+print(re.findall(pattern, text))
+print(re.sub(pattern, ""[hidden]"", text))"
+26,regex groups named groups compile,Regex,Regex Groups & Compiling,Parentheses create capture groups. Use (?P<name>...) for named groups. re.compile() precompiles a pattern for reuse/performance.,"import re
+pattern = re.compile(r""(?P<user>[\w.]+)@(?P<domain>[\w.]+)"")
+m = pattern.search(""contact: agrim@example.com"")
+print(m.group(""user""), m.group(""domain""))"
+27,regex email validation phone validation common patterns,Regex,Common Regex Patterns,"Handy reusable patterns for validation tasks. Note: for real email validation, a simple regex is a heuristic, not a full RFC check.","import re
+EMAIL = r""^[\w.+-]+@[\w-]+\.[a-zA-Z]{2,}$""
+PHONE_IN = r""^[6-9]\d{9}$""
+print(bool(re.match(EMAIL, ""agrim@lbsim.in"")))
+print(bool(re.match(PHONE_IN, ""9876543210"")))"
+28,numpy array ndarray create reshape,NumPy,NumPy Arrays,"numpy.ndarray is a fast, fixed-type, multi-dimensional array - the base of numerical Python. Much faster than plain Python lists for math.","import numpy as np
+a = np.array([1, 2, 3, 4])
+b = a.reshape(2, 2)
+print(b)
+print(a * 2)
+print(a.sum(), a.mean())"
+29,pandas dataframe series csv read_csv,Pandas,Pandas DataFrames,"pandas.DataFrame is a labeled 2D table, built on numpy. Read data with pd.read_csv(), inspect with .head()/.info(), filter with boolean masks.","import pandas as pd
+df = pd.DataFrame({""name"": [""A"", ""B""], ""score"": [80, 92]})
+print(df.head())
+print(df[df[""score""] > 85])"
+30,django project startproject startapp manage.py,Django,Starting a Django Project,Django is installed via pip and scaffolded with django-admin. A project can contain multiple apps. manage.py runs project-level commands.,"# terminal commands
+pip install django
+django-admin startproject mysite
+cd mysite
+python manage.py startapp blog
+python manage.py runserver"
+31,django model models.py orm field,Django,Django Models,Models define your database schema as Python classes in models.py. Each class attribute maps to a table column via a Field type.,"# blog/models.py
+from django.db import models
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title"
+32,django migrate migrations makemigrations,Django,Django Migrations,"Migrations sync your models with the database schema. Run makemigrations after changing models, then migrate to apply them.","# terminal commands
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser"
+33,django view views.py request response render,Django,Django Views,"A view is a Python function (or class) that takes a request and returns a response, often rendering an HTML template.","# blog/views.py
+from django.shortcuts import render
+from .models import Post
+
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, ""blog/list.html"", {""posts"": posts})"
+34,django url urls.py urlpatterns routing,Django,Django URLs,urls.py maps URL paths to views. Each app usually has its own urls.py included from the project's main urls.py.,"# blog/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("""", views.post_list, name=""post_list""),
+]"
+35,django orm queryset filter get all objects,Django,Django ORM Queries,"Model.objects is the manager used to query the database: .all(), .filter(), .get(), .exclude(), .order_by() build QuerySets lazily.","from blog.models import Post
+
+Post.objects.all()
+Post.objects.filter(title__icontains=""django"")
+Post.objects.get(id=1)
+Post.objects.order_by(""-created_at"")[:5]"
+36,django form forms.py modelform validation,Django,Django Forms,Django Forms handle input validation and HTML rendering. ModelForm auto-generates a form from a model.,"# blog/forms.py
+from django import forms
+from .models import Post
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = [""title"", ""content""]"
+37,django admin admin.py register,Django,Django Admin,Django's built-in admin gives a ready-made UI for managing your models. Register models in admin.py to expose them.,"# blog/admin.py
+from django.contrib import admin
+from .models import Post
+
+admin.site.register(Post)"
+38,django template templates render html jinja,Django,Django Templates,"Templates are HTML files with Django Template Language tags ({{ }} for variables, {% %} for logic) rendered by views.","<!-- blog/templates/blog/list.html -->
+<ul>
+{% for post in posts %}
+  <li>{{ post.title }}</li>
+{% endfor %}
+</ul>"
+39,django rest framework drf api serializer,Django,Django REST Framework Basics,DRF (installed separately: pip install djangorestframework) adds Serializers (convert models <-> JSON) and API Views/ViewSets for building REST APIs on top of Django.,"# serializers.py
+from rest_framework import serializers
+from .models import Post
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ""__all__"""
