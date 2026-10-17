@@ -570,10 +570,4 @@ The current project is a functional Python desktop learning assistant with:
 
 ---
 
-<div align="center">
 
-### 🐍 Learn Python. Write Code. Debug. Improve. 🚀
-
-**Built with Python ❤️**
-
-</div>
