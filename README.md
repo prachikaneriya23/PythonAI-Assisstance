@@ -36,7 +36,7 @@ How do I use Pandas?
 Explain NumPy arrays
 ```
 
-The application uses a machine-learning-based matcher to identify the most relevant category for a user's question. 
+The application uses a machine-learning-based matcher to identify the most relevant category for a user's question.
 
 ---
 
@@ -53,7 +53,7 @@ It provides:
 - ⏱️ Execution timeout protection
 - 🧹 Clear/reset functionality
 
-The application executes submitted code in a temporary Python file and captures both standard output and errors. Code execution is limited to 10 seconds to help prevent infinite loops from running indefinitely. 
+The application executes submitted code in a temporary Python file and captures both standard output and errors. Code execution is limited to 10 seconds to help prevent infinite loops from running indefinitely.
 
 ---
 
@@ -86,7 +86,7 @@ For recognized errors, the application provides:
 2. Human-readable explanation
 3. Suggested fixes
 
-Unknown errors receive a generic troubleshooting explanation instead. 
+Unknown errors receive a generic troubleshooting explanation instead.
 
 ---
 
@@ -109,7 +109,7 @@ The application currently targets topics including areas such as:
 - NumPy
 - Pandas
 - Django
-- And other programming concepts available in the knowledge base. 
+- And other programming concepts available in the knowledge base.
 
 ---
 
@@ -154,7 +154,7 @@ Best Matching Topics
 Explanation + Code Example
 ```
 
-The matcher combines the predicted category with document similarity to rank relevant knowledge-base entries. 
+The matcher combines the predicted category with document similarity to rank relevant knowledge-base entries.
 
 ---
 
@@ -189,17 +189,17 @@ The matcher combines the predicted category with document similarity to rank rel
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| **Python** | Core programming language |
-| **CustomTkinter** | Modern desktop graphical interface |
-| **Pandas** | Knowledge-base data processing |
-| **NumPy** | Numerical operations |
-| **Scikit-learn** | TF-IDF vectorization and Logistic Regression |
-| **Regex** | Error-pattern detection |
-| **CSV** | Structured knowledge-base storage |
+| Technology        | Purpose                                      |
+| ----------------- | -------------------------------------------- |
+| **Python**        | Core programming language                    |
+| **CustomTkinter** | Modern desktop graphical interface           |
+| **Pandas**        | Knowledge-base data processing               |
+| **NumPy**         | Numerical operations                         |
+| **Scikit-learn**  | TF-IDF vectorization and Logistic Regression |
+| **Regex**         | Error-pattern detection                      |
+| **CSV**           | Structured knowledge-base storage            |
 
-The project's declared requirements currently include CustomTkinter, Pandas, and NumPy; the source code also uses scikit-learn for the machine-learning matcher.  
+The project's declared requirements currently include CustomTkinter, Pandas, and NumPy; the source code also uses scikit-learn for the machine-learning matcher.
 
 ---
 
@@ -232,7 +232,7 @@ PythonAI-Assisstance/
     └── Generated during code execution when required
 ```
 
-The repository currently contains the core application, matcher, error solver, knowledge-base files, dependency file, and several empty temporary Python files. 
+The repository currently contains the core application, matcher, error solver, knowledge-base files, dependency file, and several empty temporary Python files.
 
 ---
 
@@ -304,7 +304,7 @@ The machine-learning matcher additionally relies on **scikit-learn**, so if it i
 pip install scikit-learn
 ```
 
- 
+
 
 ---
 
@@ -409,7 +409,7 @@ Pattern Matching
        Explanation + Fixes
 ```
 
-The implementation maintains a collection of regular-expression patterns with corresponding explanations and troubleshooting recommendations. 
+The implementation maintains a collection of regular-expression patterns with corresponding explanations and troubleshooting recommendations.
 
 ---
 
@@ -538,36 +538,4 @@ No license is currently specified in the repository.
 If you plan to distribute or accept contributions to this project, consider adding an appropriate open-source license such as the MIT License.
 
 ---
-
-## 👩‍💻 Author
-
-**Prachi Kaneriya**
-
-GitHub: **[@prachikaneriya23](https://github.com/prachikaneriya23)**
-
----
-
-## ⭐ Support the Project
-
-If this project helped you learn Python or you found it interesting, consider giving the repository a ⭐ on GitHub.
-
-Your support helps motivate further development!
-
----
-
-## 📌 Project Status
-
-**Status:** 🚧 Active Development
-
-The current project is a functional Python desktop learning assistant with:
-
-- Natural-language topic matching
-- Machine-learning-based classification
-- Python code execution
-- Automatic debugging
-- Error explanation
-- Knowledge-base browsing
-
----
-
 
